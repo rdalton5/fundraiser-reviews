@@ -26,8 +26,6 @@ class FundraiserReviewFactory extends Factory
         return [
             'rating' => $this->faker->numberBetween(1, 5),
             'review' => $this->faker->text(),
-            'user_id' => User::factory(),
-            'fundraiser_id' => Fundraiser::factory()
         ];
     }
 }
