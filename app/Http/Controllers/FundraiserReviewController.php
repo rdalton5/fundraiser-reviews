@@ -14,7 +14,8 @@ class FundraiserReviewController extends Controller
      */
     public function index()
     {
-        //
+        //probably don't need this one, who wants to view a bunch of unrelated fundraisers?
+        return response()->json(FundraiserReview::all());
     }
 
     /**
@@ -24,7 +25,7 @@ class FundraiserReviewController extends Controller
      */
     public function create()
     {
-        //
+        // I'll probably handle this with vue
     }
 
     /**
@@ -57,7 +58,7 @@ class FundraiserReviewController extends Controller
      */
     public function edit(FundraiserReview $fundraiserReview)
     {
-        //
+        // I'll probably handle this with vue
     }
 
     /**

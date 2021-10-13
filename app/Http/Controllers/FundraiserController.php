@@ -14,7 +14,7 @@ class FundraiserController extends Controller
      */
     public function index()
     {
-        //
+        return view('fundraisers.all', ['fundraisers' => Fundraiser::with('reviews')->get()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class FundraiserController extends Controller
      */
     public function create()
     {
-        //
+        //I'll probably handle this with vue
     }
 
     /**
@@ -46,7 +46,7 @@ class FundraiserController extends Controller
      */
     public function show(Fundraiser $fundraiser)
     {
-        //
+        return response()->json($fundraiser);
     }
 
     /**
@@ -57,7 +57,7 @@ class FundraiserController extends Controller
      */
     public function edit(Fundraiser $fundraiser)
     {
-        //
+        // I'll probably handle this with vue
     }
 
     /**
