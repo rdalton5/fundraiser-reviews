@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFundraiserRequest;
 use App\Models\Fundraiser;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,7 @@ class FundraiserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFundraiserRequest $request)
     {
         Fundraiser::create(['name' => $request->name]);
         return redirect()->route('fundraisers.index');
@@ -47,7 +48,10 @@ class FundraiserController extends Controller
      */
     public function show(Fundraiser $fundraiser)
     {
-        return response()->json($fundraiser);
+        //is there a better way to make sure the reviews are on the object?
+        $fundraiser->reviews = $fundraiser->reviews()->with('user')->get();
+         
+        return view('fundraisers.show', ['fundraiser' => $fundraiser]);
     }
 
     /**
@@ -70,7 +74,7 @@ class FundraiserController extends Controller
      */
     public function update(Request $request, Fundraiser $fundraiser)
     {
-        //
+        //TODO
     }
 
     /**
@@ -81,6 +85,6 @@ class FundraiserController extends Controller
      */
     public function destroy(Fundraiser $fundraiser)
     {
-        //
+        //TODO
     }
 }

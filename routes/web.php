@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FundraiserController;
+use App\Http\Controllers\FundraiserReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/fundraisers', FundraiserController::class);
+Route::resource('/fundraiser-reviews', FundraiserReviewController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

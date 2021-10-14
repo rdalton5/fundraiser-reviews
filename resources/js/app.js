@@ -22,6 +22,9 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('fundraiser-card', require('./components/FundraiserCard.vue').default);
+Vue.component('fundraiser-with-reviews', require('./components/FundraiserWithReviews.vue').default);
+Vue.component('review', require('./components/Review.vue').default);
+Vue.component('add-review-form', require('./components/AddReviewForm.vue').default);
 
 
 /**

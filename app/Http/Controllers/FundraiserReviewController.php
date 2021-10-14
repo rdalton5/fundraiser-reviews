@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFundraiserReviewRequest;
 use App\Models\FundraiserReview;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FundraiserReviewController extends Controller
 {
@@ -34,9 +36,16 @@ class FundraiserReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFundraiserReviewRequest $request)
     {
-        //
+        $fundraiser = FundraiserReview::create([
+            'rating' => $request->rating,
+            'review' => $request->review,
+            'fundraiser_id' => $request->fundraiser_id,
+            'user_id' => Auth::id()
+        ]);
+
+        return response()->json($fundraiser);
     }
 
     /**
@@ -70,7 +79,7 @@ class FundraiserReviewController extends Controller
      */
     public function update(Request $request, FundraiserReview $fundraiserReview)
     {
-        //
+        //TODO
     }
 
     /**
@@ -81,6 +90,6 @@ class FundraiserReviewController extends Controller
      */
     public function destroy(FundraiserReview $fundraiserReview)
     {
-        //
+        //TODO
     }
 }
