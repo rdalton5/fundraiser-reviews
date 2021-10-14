@@ -9,7 +9,6 @@ require('./bootstrap');
 require('alpinejs');
 
 window.Vue = require('vue').default;
-require('./modal');
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,9 +21,7 @@ require('./modal');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('fundraiser-card', require('./components/FundraiserCard.vue').default);
-Vue.component('review-modal', require('./components/ReviewModal.vue').default);
 
 
 /**

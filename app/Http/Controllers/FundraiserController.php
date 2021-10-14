@@ -14,7 +14,7 @@ class FundraiserController extends Controller
      */
     public function index()
     {
-        return view('fundraisers.all', ['fundraisers' => Fundraiser::with('reviews')->get()]);
+        return view('fundraisers.index', ['fundraisers' => Fundraiser::with('reviews')->get()]);
     }
 
     /**
@@ -35,7 +35,8 @@ class FundraiserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Fundraiser::create(['name' => $request->name]);
+        return redirect()->route('fundraisers.index');
     }
 
     /**
