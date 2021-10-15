@@ -4243,6 +4243,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -41036,26 +41041,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "py-8 px-8 max-w-4xl mx-auto bg-white rounded-xl3 shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
-    },
-    [
-      _c(
-        "div",
-        { staticClass: "text-center space-y-2 sm:text-left" },
-        [
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass:
+          "py-8 px-8 max-w-4xl mx-auto bg-white rounded-xl3 shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
+      },
+      [
+        _c("div", { staticClass: "text-center space-y-2 sm:text-left" }, [
           _c(
             "div",
             { staticClass: "space-y-0.5" },
             [
               _c("p", { staticClass: "text-lg text-black font-semibold" }, [
                 _vm._v(
-                  "\n                " +
+                  "\n                  " +
                     _vm._s(_vm.fundraiser.name) +
-                    "\n            "
+                    "\n              "
                 )
               ]),
               _vm._v(" "),
@@ -41093,14 +41096,21 @@ var render = function() {
               )
             }),
             0
-          ),
-          _vm._v(" "),
-          _c("add-review-form", { attrs: { fundraiser_id: _vm.fundraiser.id } })
-        ],
-        1
-      )
-    ]
-  )
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "mt-5 py-8 px-8 max-w-4xl mx-auto bg-white rounded-xl3 shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
+      },
+      [_c("add-review-form", { attrs: { fundraiser_id: _vm.fundraiser.id } })],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
