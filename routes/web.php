@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FundraiserController;
 use App\Http\Controllers\FundraiserReviewController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::user()) {
+        return redirect('/fundraisers');
+    } else {
+        return view('welcome');
+    }
 });
 
-Route::resource('/fundraisers', FundraiserController::class);
-Route::resource('/fundraiser-reviews', FundraiserReviewController::class);
+Route::resource('/fundraisers', FundraiserController::class)
+    ->middleware(['auth']);
+Route::resource('/fundraiser-reviews', FundraiserReviewController::class)
+    ->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
