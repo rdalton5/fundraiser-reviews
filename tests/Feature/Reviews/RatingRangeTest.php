@@ -11,7 +11,8 @@ use Tests\TestCase;
 class RatingRangeTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * the request should return with validation errors when a 
+     * rating not in the range 1-5 is given
      * 
      * @dataProvider invalidRatingsProvider
      * 
@@ -31,7 +32,7 @@ class RatingRangeTest extends TestCase
     }
 
     /**
-     * A basic feature test example.
+     * the request should not be invalidated for valid ratings 1-5
      * 
      * @dataProvider validRatingsProvider
      * 

@@ -12,7 +12,7 @@ use Tests\TestCase;
 class ReviewLimitTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * the request should return invalid when the user has already reviewed the fundraiser
      *
      * @return void
      */
